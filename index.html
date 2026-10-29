@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marjorie Boutique | Session A</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 p-6 md:p-12 font-sans">
+
+    <!-- Header -->
+    <header class="mb-10 flex flex-col md:flex-row justify-between items-center border-b-2 border-gray-900 pb-4">
+        <h1 class="text-2xl font-serif font-bold tracking-widest uppercase mb-4 md:mb-0">Marjorie</h1>
+        <nav class="flex gap-4">
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#work" class="hover:underline">Collection</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero -->
+        <section class="text-center py-16 md:py-24">
+            <h2 class="text-4xl md:text-6xl font-serif mb-4">Elegance Redefined.</h2>
+            <p class="mb-8 text-gray-600">Curated fashion for the modern woman.</p>
+            <a href="#work" class="bg-rose-600 text-white px-6 py-2 border-2 border-gray-900 font-bold uppercase tracking-wider text-sm">Shop Collection</a>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-8 border-y-2 border-gray-900 my-8">
+            <h3 class="text-2xl font-serif font-bold mb-2">Our Story</h3>
+            <p class="text-gray-700">Marjorie Boutique was founded on the belief that fashion should be timeless, elegant, and accessible. We source the finest fabrics to bring you pieces that last a lifetime.</p>
+        </section>
+
+        <!-- Work -->
+        <section id="work" class="py-8">
+            <h3 class="text-2xl font-serif font-bold mb-4">Featured Pieces</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border-2 border-gray-900 p-4 text-center">
+                    <h4 class="font-bold mb-2">The Silk Dress</h4>
+                    <p class="text-sm text-gray-500">$120.00</p>
+                </div>
+                <div class="border-2 border-gray-900 p-4 text-center">
+                    <h4 class="font-bold mb-2">Linen Blazer</h4>
+                    <p class="text-sm text-gray-500">$95.00</p>
+                </div>
+                <div class="border-2 border-gray-900 p-4 text-center">
+                    <h4 class="font-bold mb-2">Classic Tote</h4>
+                    <p class="text-sm text-gray-500">$75.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-8 border-t-2 border-gray-900 mt-8">
+            <h3 class="text-2xl font-serif font-bold mb-4">Get in Touch</h3>
+            <form class="flex flex-col gap-4 max-w-sm">
+                <div>
+                    <label for="name" class="block mb-1">Name</label>
+                    <input type="text" id="name" class="w-full border-2 border-gray-900 p-2 bg-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block mb-1">Email</label>
+                    <input type="email" id="email" class="w-full border-2 border-gray-900 p-2 bg-transparent">
+                </div>
+                <button type="submit" class="border-2 border-gray-900 px-4 py-2 font-bold w-max">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="mt-12 pt-4 border-t-2 border-gray-900 text-center text-sm">
+        <p>&copy; 2026 Marjorie Boutique.</p>
+    </footer>
+
+</body>
+</html>
