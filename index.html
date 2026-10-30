@@ -11,7 +11,7 @@
         @custom-variant dark (&:where(.dark, .dark *));
 
         @theme {
-            --color-brand-bg: #FAFAFA;
+            --color-brand-bg: #FCE7F3;
             --color-brand-text: #1C1917;
             --color-brand-accent: #E11D48;
         }
@@ -22,11 +22,11 @@
             }
         }
     </style>
+</head>
+<body class="bg-brand-bg text-brand-text dark:bg-brand-text dark:text-brand-bg transition-colors duration-300 p-6 md:p-12 font-sans">
 
     <!-- Scroll Progress Bar -->
     <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-brand-accent z-50 w-0"></div>
-</head>
-<body class="bg-brand-bg text-brand-text dark:bg-brand-text dark:text-brand-bg transition-colors duration-300 p-6 md:p-12 font-sans">
 
     <header class="mb-10 flex flex-col md:flex-row justify-between items-center border-b-2 border-brand-text dark:border-brand-bg pb-4">
         <h1 class="text-2xl font-serif font-bold tracking-widest uppercase mb-4 md:mb-0">Marjorie</h1>
@@ -39,11 +39,22 @@
     </header>
 
     <main>
-        <!-- Hero (Animated by intro timeline) -->
-        <section class="text-center py-16 md:py-24">
-            <h2 class="intro-title text-4xl md:text-6xl font-serif mb-4">Elegance Redefined.</h2>
-            <p class="intro-text mb-8 opacity-80">Curated fashion for the modern woman.</p>
-            <a href="#work" class="intro-btn btn">Shop Collection</a>
+        <!-- Hero (Animated by intro timeline) with Background Image -->
+        <section class="relative text-center py-20 md:py-32 overflow-hidden border-b-2 border-brand-text dark:border-brand-bg mb-8">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80" alt="Fashion Background" class="absolute inset-0 w-full h-full object-cover opacity-10 dark:opacity-5 pointer-events-none">
+            
+            <div class="relative z-10">
+                <h2 class="intro-title text-4xl md:text-6xl font-serif mb-4">Elegance Redefined.</h2>
+                <p class="intro-text mb-8 opacity-80">Curated fashion for the modern woman.</p>
+                
+                <!-- Buttons Wrapper -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#work" class="intro-btn btn">Shop Collection</a>
+                    
+                    <!-- REPLAY INTRO BUTTON MOVED HERE -->
+                    <button id="replay-btn" class="border-2 border-brand-text dark:border-brand-bg px-6 py-2 font-bold uppercase text-sm hover:bg-brand-accent hover:text-white transition-colors">Replay Intro</button>
+                </div>
+            </div>
         </section>
 
         <!-- About (Reveals on scroll) -->
@@ -54,42 +65,83 @@
 
         <!-- Work (Reveals on scroll) -->
         <section id="work" class="py-8">
-            <h3 class="reveal text-2xl font-serif font-bold mb-4">Featured Pieces</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="reveal border-2 border-brand-text dark:border-brand-bg p-4 text-center">
-                    <h4 class="font-bold mb-2">The Silk Dress</h4>
-                    <p class="text-sm opacity-70">$120.00</p>
+            <h3 class="reveal text-2xl font-serif font-bold mb-6">Featured Pieces</h3>
+            
+            <!-- UPDATED COLLECTION GRID WITH IMAGES -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: The Silk Dress -->
+                <div class="reveal group flex flex-col bg-white dark:bg-brand-text border border-brand-text/10 dark:border-brand-bg/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-sm">
+                    <div class="relative overflow-hidden">
+                        <!-- Image for Silk Dress -->
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=750&fit=crop" alt="The Silk Dress" class="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 text-center border-t border-brand-text/10 dark:border-brand-bg/20">
+                        <h4 class="font-serif font-bold text-lg mb-1">The Silk Dress</h4>
+                        <p class="text-sm font-light opacity-70 tracking-widest">₱120.00</p>
+                    </div>
                 </div>
-                <div class="reveal border-2 border-brand-text dark:border-brand-bg p-4 text-center">
-                    <h4 class="font-bold mb-2">Linen Blazer</h4>
-                    <p class="text-sm opacity-70">$95.00</p>
+
+                <!-- Card 2: Linen Blazer -->
+                <div class="reveal group flex flex-col bg-white dark:bg-brand-text border border-brand-text/10 dark:border-brand-bg/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-sm">
+                    <div class="relative overflow-hidden">
+                        <!-- Image for Linen Blazer -->
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=750&fit=crop" alt="Linen Blazer" class="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 text-center border-t border-brand-text/10 dark:border-brand-bg/20">
+                        <h4 class="font-serif font-bold text-lg mb-1">Linen Blazer</h4>
+                        <p class="text-sm font-light opacity-70 tracking-widest">₱130.00</p>
+                    </div>
                 </div>
-                <div class="reveal border-2 border-brand-text dark:border-brand-bg p-4 text-center">
-                    <h4 class="font-bold mb-2">Classic Tote</h4>
-                    <p class="text-sm opacity-70">$75.00</p>
+
+                <!-- Card 3: Classic Tote -->
+                <div class="reveal group flex flex-col bg-white dark:bg-brand-text border border-brand-text/10 dark:border-brand-bg/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-sm">
+                    <div class="relative overflow-hidden">
+                        <!-- Image for Classic Tote -->
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&h=750&fit=crop" alt="Classic Tote" class="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 text-center border-t border-brand-text/10 dark:border-brand-bg/20">
+                        <h4 class="font-serif font-bold text-lg mb-1">Classic Tote</h4>
+                        <p class="text-sm font-light opacity-70 tracking-widest">₱300.00</p>
+                    </div>
                 </div>
+
             </div>
             
-            <!-- Replay Button for GSAP Intro (D3) -->
-            <div class="mt-8 text-center">
-                <button id="replay-btn" class="border-2 border-brand-text dark:border-brand-bg px-4 py-2 font-bold uppercase text-sm hover:bg-brand-accent hover:text-white transition-colors">Replay Intro</button>
-            </div>
         </section>
 
-        <!-- Contact (Reveals on scroll) -->
-        <section id="contact" class="reveal py-8 border-t-2 border-brand-text dark:border-brand-bg mt-8">
-            <h3 class="text-2xl font-serif font-bold mb-4">Get in Touch</h3>
-            <form class="flex flex-col gap-4 max-w-sm">
-                <div>
-                    <label for="name" class="block mb-1">Name</label>
-                    <input type="text" id="name" required class="w-full border-2 border-brand-text dark:border-brand-bg p-2 bg-transparent focus:outline-none focus:border-brand-accent dark:focus:border-brand-accent">
+        <!-- Contact (Reveals on scroll) - UPDATED PRETTY VERSION -->
+        <section id="contact" class="reveal py-16 mt-8 flex justify-center">
+            <!-- The Card Container -->
+            <div class="w-full max-w-2xl bg-white dark:bg-brand-text border-2 border-brand-text dark:border-brand-bg p-8 md:p-10 shadow-xl rounded-sm">
+                <div class="text-center mb-10">
+                    <h3 class="text-3xl font-serif font-bold mb-2">Get in Touch</h3>
+                    <p class="text-sm opacity-70">Inquiries, custom orders, or just to say hello.</p>
                 </div>
-                <div>
-                    <label for="email" class="block mb-1">Email</label>
-                    <input type="email" id="email" required class="w-full border-2 border-brand-text dark:border-brand-bg p-2 bg-transparent focus:outline-none focus:border-brand-accent dark:focus:border-brand-accent">
-                </div>
-                <button type="submit" class="btn w-max">Send Message</button>
-            </form>
+
+                <form class="flex flex-col gap-6">
+                    <!-- Name & Email Side-by-Side -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-bold uppercase tracking-wider">Name</label>
+                            <input type="text" id="name" required class="w-full border-2 border-brand-text/20 dark:border-brand-bg/20 bg-brand-bg/30 dark:bg-brand-text/50 rounded-sm p-3 focus:outline-none focus:border-brand-accent dark:focus:border-brand-accent transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-bold uppercase tracking-wider">Email</label>
+                            <input type="email" id="email" required class="w-full border-2 border-brand-text/20 dark:border-brand-bg/20 bg-brand-bg/30 dark:bg-brand-text/50 rounded-sm p-3 focus:outline-none focus:border-brand-accent dark:focus:border-brand-accent transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-bold uppercase tracking-wider">Message</label>
+                        <textarea id="message" rows="5" required class="w-full border-2 border-brand-text/20 dark:border-brand-bg/20 bg-brand-bg/30 dark:bg-brand-text/50 rounded-sm p-3 focus:outline-none focus:border-brand-accent dark:focus:border-brand-accent transition-colors resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn w-full mt-2 py-3 text-base">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -97,8 +149,15 @@
         <p>&copy; 2026 Marjorie Boutique.</p>
     </footer>
 
-    <!-- Dark Mode Script -->
+    <!-- GSAP Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- JavaScript -->
     <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Dark Mode Toggle
         const html = document.documentElement;
         const btn = document.getElementById('theme-toggle');
         
@@ -110,12 +169,49 @@
             html.classList.toggle('dark');
             localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
-    </script>
 
-    <!-- GSAP Scripts (Load order matters!) -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <!-- Your custom script goes last -->
-    <script src="script.js"></script>
+        // GSAP Intro Timeline
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+        tl.from(".intro-title", { y: 50, opacity: 0 })
+          .from(".intro-text", { y: 30, opacity: 0 }, "-=0.4")
+          .from("header nav a", { y: -20, opacity: 0, stagger: 0.1 }, "-=0.6")
+          .from(".intro-btn", { scale: 0.8, opacity: 0, duration: 0.5 });
+
+        // REPLAY BUTTON: Scroll to top, then refresh
+        document.getElementById("replay-btn").addEventListener("click", () => {
+            window.scrollTo(0, 0);
+            window.location.reload();
+        });
+
+        // Scroll Progress Bar
+        gsap.to("#progress-bar", {
+            width: "100%",
+            ease: "none", 
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.3
+            }
+        });
+
+        // Section Reveals on Scroll
+        let mm = gsap.matchMedia();
+        mm.add("(prefers-reduced-motion: no-preference)", () => {
+            gsap.utils.toArray(".reveal").forEach((section) => {
+                gsap.from(section, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 85%", 
+                        toggleActions: "play none none reverse" 
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
